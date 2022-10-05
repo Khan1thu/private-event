@@ -1,6 +1,10 @@
+<% if user_signed_in? %>
 <% @event.each do |e|%>
-   <h1> ID:  <%= e.id%>
-   <h1> Name:  <%= e.event_name %>
-   <h1> Place: <%= e.event_place %>
-   <h1> Date: <%= e.event_date %>
+   <h1> Event Name:  <%= e.event_name %>
+   <h1> Event Place: <%= e.event_place %>
+   <h1> Event Date: <%= e.event_date %>
+   <h1> Event Creator: <%= e.user.email %>
 <%end %>
+<%else%>
+<h1>You need to Sign In to see the event </h1>
+<%end%>
