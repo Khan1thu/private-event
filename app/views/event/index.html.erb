@@ -1,11 +1,13 @@
-<% @event.each do |e|%>
-   <h1> Event Name:  <%= e.event_name %>
-   <h1> Event Place: <%= e.event_place %>
-   <h1> Event Date: <%= e.event_date %>
-   <h1> Event Creator: <%= e.user.email %>
+<h1>All Event </h1>
 
-   <div>
+
+
+<% @event.each do |e|%>
+
+   <h2><%= link_to e.event_name, e%></h2>
+<% end %>
+
+ <div>
       <%= link_to 'Log Out', destroy_user_session_path, method: :delete%>
       <%= link_to 'Create New Event', new_event_path, method: :get %>
-   </div>
-<% end %>
+</div>
